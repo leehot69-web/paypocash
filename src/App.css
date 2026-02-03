@@ -1,0 +1,187 @@
+:root {
+  --primary-orange: #FF4700;
+  --secondary-orange: #FD6B01;
+  --paypo-yellow: #FFC107;
+  --bg-light: #F5F5F7;
+  --text-main: #1F2937;
+  --surface: #FFFFFF;
+}
+
+body {
+  background-color: var(--bg-light);
+  font-family: 'Outfit', 'Inter', sans-serif;
+  color: var(--text-main);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Moderna Glassmorphism & Layering */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(255, 71, 0, 0.05);
+}
+
+.layered-shadow {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.02),
+    0 4px 8px rgba(0, 0, 0, 0.02),
+    0 16px 32px rgba(255, 71, 0, 0.05);
+}
+
+/* El Contenedor del Saldo - Versión Moderna 2026 */
+.balance-circle {
+  width: 240px;
+  height: 240px;
+  background: var(--surface);
+  border-radius: 50%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 12px solid var(--primary-orange);
+  box-shadow:
+    0 20px 40px -10px rgba(255, 71, 0, 0.2),
+    inset 0 0 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 2;
+}
+
+.balance-circle::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+  z-index: -1;
+  opacity: 0.1;
+  filter: blur(20px);
+}
+
+.balance-circle:hover {
+  transform: scale(1.05) translateY(-5px);
+  border-color: var(--secondary-orange);
+}
+
+/* Billetes Arrastrables - Neomorfismo Suave */
+.banknote {
+  width: 85px;
+  height: 50px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: white;
+  cursor: grab;
+  margin: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s;
+  font-size: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.banknote:active {
+  cursor: grabbing;
+  transform: scale(0.95);
+}
+
+/* Colores de Billetes - AliExpress Theme */
+.denom-0-5 {
+  background: linear-gradient(135deg, #FF9E7D, #FF4700);
+}
+
+.denom-1 {
+  background: linear-gradient(135deg, #FF6B6B, #EE5253);
+}
+
+.denom-2 {
+  background: linear-gradient(135deg, #576574, #222f3e);
+}
+
+.denom-5 {
+  background: linear-gradient(135deg, #FF9F43, #FF6B01);
+}
+
+.denom-10 {
+  background: linear-gradient(135deg, #FF4700, #C23616);
+}
+
+/* Drop Zone */
+.drop-zone {
+  border: 3px dashed rgba(255, 71, 0, 0.2);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 2.5rem;
+  margin-top: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drop-zone.active {
+  border-color: var(--primary-orange);
+  background: rgba(255, 71, 0, 0.05);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -15px rgba(255, 71, 0, 0.2);
+}
+
+/* Botón AliExpress Style - "Comprar Ahora" */
+.btn-confirm {
+  background: linear-gradient(90deg, #FF4700, #FD6B01);
+  color: white;
+  font-weight: 900;
+  padding: 1.25rem 2rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  border: none;
+  box-shadow: 0 10px 20px -5px rgba(255, 71, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-confirm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(255, 71, 0, 0.5);
+}
+
+.btn-confirm:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px -5px rgba(255, 71, 0, 0.4);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Ocultar scrollbar en carrusel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
