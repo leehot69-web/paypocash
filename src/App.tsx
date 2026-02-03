@@ -370,7 +370,7 @@ const StoresView = () => {
                 <p className="text-[9px] text-gray-400 uppercase font-black">{s.category}</p>
                 <div className="flex items-center gap-1 mt-1">
                   <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
-                  <span className="text-[10px] font-black text-gray-600">4.{Math.floor(Math.random() * 3) + 7}</span>
+                  <span className="text-[10px] font-black text-gray-600">4.{7 + (i % 3)}</span>
                 </div>
               </div>
             </div>
