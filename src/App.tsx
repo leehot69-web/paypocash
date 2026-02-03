@@ -24,7 +24,6 @@ import {
   LogOut,
   Plus,
   QrCode,
-  Store,
   Truck,
 } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
