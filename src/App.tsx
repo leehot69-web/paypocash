@@ -26,7 +26,6 @@ import {
   QrCode,
   Store,
   Truck,
-  Banknote
 } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -157,23 +156,7 @@ const STORES_DATA: Store[] = [
   }
 ];
 
-// --- Logo Component ---
-const PayPoLogo = ({ size = 'normal' }: { size?: 'small' | 'normal' | 'large' }) => {
-  const sizes = {
-    small: { text: 'text-2xl' },
-    normal: { text: 'text-5xl' },
-    large: { text: 'text-7xl' }
-  };
 
-  const s = sizes[size];
-
-  return (
-    <div className={`font-black tracking-tight ${s.text} flex items-baseline`}>
-      <span className="text-gray-800">Pay</span>
-      <span className="text-[#FF4700]">Po</span>
-    </div>
-  );
-};
 
 // --- VISTAS ---
 
